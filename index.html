@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stephen Levy — Product Leader | Game Platforms, Developer Tools & AI</title>
+<meta name="description" content="Product leader with 25+ years building the platforms that power great games — Microsoft, NCsoft, Amazon, Unity, Zynga. Developer platforms, live services, AI systems.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stephen Levy — Product Leader | Game Platforms, Developer Tools & AI">
+<meta property="og:description" content="Product leader with 25+ years building the platforms that power great games — Microsoft, NCsoft, Amazon, Unity, Zynga. Developer platforms, live services, AI systems.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%230E1116%22/><text x=%2232%22 y=%2242%22 font-family=%22Arial,Helvetica,sans-serif%22 font-size=%2226%22 font-weight=%22700%22 fill=%22%234FD1C5%22 text-anchor=%22middle%22>SL</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E1116;
+    --surface:#161B22;
+    --border:#262D37;
+    --text:#E6EAF0;
+    --text-muted:#98A2B3;
+    --accent:#4FD1C5;
+    --accent-dim:#2C7A73;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-weight:400;
+    font-size:1.05rem;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:var(--accent-dim);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(14,17,22,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{
+    max-width:1040px;margin:0 auto;padding:18px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-name{font-weight:700;font-size:1rem;letter-spacing:-0.01em;color:var(--text);}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;}
+  .nav-links a{color:var(--text-muted);font-weight:500;font-size:0.95rem;}
+  .nav-links a:hover{color:var(--accent);}
+  @media (max-width:600px){
+    .nav-links{display:none;}
+  }
+
+  main section{
+    padding:96px 0;
+    border-bottom:1px solid var(--border);
+  }
+  main section:last-of-type{border-bottom:none;}
+
+  h1,h2,h3{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    letter-spacing:-0.02em;
+    margin:0 0 0.5em;
+    color:var(--text);
+  }
+  h2{font-size:clamp(1.6rem,3.2vw,2.1rem);margin-bottom:1.2em;}
+  p{max-width:68ch;}
+  .muted{color:var(--text-muted);}
+
+  /* Hero */
+  #hero{padding-top:72px;}
+  .hero-headline{
+    font-size:clamp(2.2rem,5vw,3.5rem);
+    font-weight:700;
+    letter-spacing:-0.02em;
+    max-width:16ch;
+    margin:0 0 0.5em;
+  }
+  .hero-subhead{
+    max-width:60ch;
+    color:var(--text-muted);
+    font-size:1.15rem;
+    margin-bottom:2.5em;
+  }
+  .stat-strip{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-bottom:2.5em;
+  }
+  @media (max-width:700px){
+    .stat-strip{grid-template-columns:1fr;}
+  }
+  .stat{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:24px;
+  }
+  .stat-num{
+    font-weight:700;
+    font-size:clamp(2rem,4vw,2.6rem);
+    color:var(--accent);
+    line-height:1;
+    margin-bottom:0.3em;
+    display:block;
+  }
+  .stat-label{color:var(--text-muted);font-size:0.95rem;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:0.95rem;
+    border:1px solid var(--border);
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#0E1116;
+    border-color:var(--accent);
+  }
+  .btn-primary:hover{background:var(--accent-dim);border-color:var(--accent-dim);color:#0E1116;}
+  .btn-secondary{color:var(--text);}
+  .btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+
+  strong{color:var(--accent);font-weight:700;}
+
+  /* Worked-with strip */
+  .worked-with{
+    padding:36px 0 52px;
+    border-bottom:1px solid var(--border);
+  }
+  .worked-with-label{
+    color:var(--text-muted);
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    margin-bottom:16px;
+    font-weight:600;
+  }
+  .worked-with-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px 40px;
+    align-items:center;
+  }
+  .worked-with-item{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.01em;
+    color:var(--text-muted);
+    opacity:0.75;
+    transition:opacity .15s ease, color .15s ease;
+    white-space:nowrap;
+  }
+  .worked-with-item:hover{opacity:1;color:var(--accent);}
+  @media (max-width:600px){
+    .worked-with-row{gap:14px 24px;}
+    .worked-with-item{font-size:0.95rem;}
+  }
+
+  /* Through-line */
+  #about p{margin-bottom:1.2em;color:var(--text);}
+
+  /* Case studies */
+  .case{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    margin-bottom:16px;
+    overflow:hidden;
+  }
+  .case-toggle{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:none;
+    border:none;
+    color:var(--text);
+    font-family:inherit;
+    text-align:left;
+    padding:22px 24px;
+    cursor:pointer;
+  }
+  .case-icon{
+    flex-shrink:0;
+    width:52px;height:52px;
+    border-radius:10px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--accent);
+  }
+  .case-icon svg{width:26px;height:26px;}
+  @media (max-width:500px){
+    .case-icon{width:42px;height:42px;}
+    .case-icon svg{width:22px;height:22px;}
+  }
+  .case-toggle-text{flex:1 1 auto;min-width:0;}
+  .case-toggle-text h3{margin:0 0 4px;font-size:1.15rem;}
+  .case-toggle-text .card-summary{color:var(--text-muted);font-size:0.95rem;margin:0;max-width:60ch;}
+  .chevron{
+    flex-shrink:0;
+    width:22px;height:22px;
+    color:var(--accent);
+    margin-left:auto;
+    transition:transform .2s ease;
+  }
+  .case-toggle[aria-expanded="true"] .chevron{transform:rotate(180deg);}
+  .case-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .case-body-inner{
+    padding:0 24px 26px;
+    border-top:1px solid var(--border);
+    padding-top:20px;
+  }
+  .case-body-inner h4{
+    color:var(--accent);
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    font-weight:600;
+    margin:1.4em 0 0.5em;
+  }
+  .case-body-inner h4:first-child{margin-top:0;}
+  .case-body-inner ul{margin:0.5em 0;padding-left:1.2em;}
+  .case-body-inner li{margin-bottom:0.5em;}
+  .case-body-inner p{margin:0.3em 0 0.8em;}
+
+  /* Timeline */
+  .timeline{display:flex;flex-direction:column;}
+  .timeline-row{
+    display:grid;
+    grid-template-columns:110px 160px 1fr;
+    gap:20px;
+    padding:16px 0;
+    border-bottom:1px solid var(--border);
+    align-items:baseline;
+  }
+  .timeline-row:last-child{border-bottom:none;}
+  .timeline-years{color:var(--accent);font-weight:600;font-size:0.95rem;}
+  .timeline-role{font-weight:600;}
+  .timeline-company{font-weight:700;}
+  .timeline-line{color:var(--text-muted);font-size:0.95rem;}
+  @media (max-width:700px){
+    .timeline-row{grid-template-columns:1fr;gap:4px;padding:18px 0;}
+  }
+  .timeline-footer{
+    margin-top:24px;
+    padding-top:20px;
+    border-top:1px solid var(--border);
+    color:var(--text-muted);
+    font-size:0.9rem;
+  }
+
+  /* How I work */
+  .principles{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+  }
+  @media (max-width:700px){
+    .principles{grid-template-columns:1fr;}
+  }
+  .principle h3{font-size:1.1rem;color:var(--accent);}
+  .principle p{color:var(--text-muted);margin:0;}
+
+  /* Contact */
+  #contact p{color:var(--text-muted);}
+  .contact-links{display:flex;flex-direction:column;gap:10px;margin-top:1.5em;font-size:1.05rem;}
+  .contact-links a{font-weight:600;}
+
+  footer{
+    padding:32px 24px;
+    text-align:center;
+    color:var(--text-muted);
+    font-size:0.85rem;
+  }
+
+  /* Entrance animation */
+  .reveal{
+    opacity:0;
+    transform:translateY(12px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .reveal.in-view{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .case-body{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <span class="nav-name">Stephen Levy</span>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <section id="hero" class="wrap">
+    <h1 class="hero-headline">I build the platforms that power great games.</h1>
+    <p class="hero-subhead">Product leader with 25+ years across Microsoft, NCsoft, Amazon, Unity, and Zynga — shipping developer platforms, live services, and AI systems that studios and millions of players depend on.</p>
+
+    <div class="stat-strip">
+      <div class="stat">
+        <span class="stat-num">300%</span>
+        <span class="stat-label">Twitch Prime membership growth — #2 acquisition driver for Amazon Prime</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">90%</span>
+        <span class="stat-label">Reduction in deployment lead time across Zynga studios</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">3M</span>
+        <span class="stat-label">Guild Wars 2 units sold in six months as Global Director of Publishing</span>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="#work" class="btn btn-primary">View selected work</a>
+      <a href="#contact" class="btn btn-secondary">Get in touch</a>
+    </div>
+  </section>
+
+  <div class="wrap worked-with reveal">
+    <p class="worked-with-label">Platforms &amp; companies</p>
+    <div class="worked-with-row">
+      <span class="worked-with-item">Microsoft</span>
+      <span class="worked-with-item">NCsoft</span>
+      <span class="worked-with-item">Amazon</span>
+      <span class="worked-with-item">Twitch</span>
+      <span class="worked-with-item">Unity</span>
+      <span class="worked-with-item">Zynga</span>
+    </div>
+  </div>
+
+  <section id="about" class="wrap reveal">
+    <h2>The through-line</h2>
+    <p>Every role I've held comes down to the same job: take a complex system — a console launch, an MMO publishing operation, a multiplayer platform, a build pipeline — and turn it into something teams can actually use to ship great games.</p>
+    <p>I started at Microsoft owning operational launch for Xbox 360, built NCsoft West's publishing function for Guild Wars 2, and grew Twitch Prime into Amazon Prime's second-largest acquisition channel. Then I went deep on the developer side: multiplayer services at Unity, fintech tooling for studios at Sanlo, and now Zynga's Systems organization — the platform team behind build pipelines, cloud infrastructure, and AI-powered developer tools for every Zynga studio.</p>
+    <p>Along the way I joined a hardware startup as its second employee and drove its Kickstarter to <strong>640%</strong> of goal, and built and sold Washington's largest indoor golf business. I like hard, ambiguous problems, small teams with big mandates, and measurable outcomes. That hasn't changed in 25 years.</p>
+  </section>
+
+  <section id="work" class="wrap reveal">
+    <h2>Selected work</h2>
+
+    <div class="case">
+      <button class="case-toggle" aria-expanded="true" aria-controls="case-1">
+        <span class="case-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10" cy="24" r="4"/>
+            <circle cx="24" cy="12" r="4"/>
+            <circle cx="24" cy="36" r="4"/>
+            <circle cx="38" cy="24" r="4"/>
+            <path d="M13.5 22 L20.5 14"/>
+            <path d="M13.5 26 L20.5 34"/>
+            <path d="M27.5 14 L34.5 22"/>
+            <path d="M27.5 34 L34.5 26"/>
+          </svg>
+        </span>
+        <div class="case-toggle-text">
+          <h3>Zynga: Platform transformation, then a turnaround</h3>
+          <p class="card-summary">Rebuilt Zynga's developer platforms (90% faster deployments, 80%+ cost reduction), then was asked to take over a struggling Tools organization and get it shipping.</p>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="case-body" id="case-1">
+        <div class="case-body-inner">
+          <h4>Context</h4>
+          <p>I joined Zynga as Director of Product Management leading the Systems team — the internal platform organization behind build pipelines, cloud infrastructure, and AI-powered developer tools for every studio. In early 2026, leadership asked me to move to the Tools organization: three product pods that were struggling to execute and needed to get back on track.</p>
+          <h4>Chapter 1 — Systems: replatforming how studios build games</h4>
+          <ul>
+            <li>Unified core developer platforms — CI/CD, GitHub, Kubernetes, Artifactory — into a shared, multi-tenant foundation studios adopt instead of rebuild</li>
+            <li>Automated manual DevOps workflows end to end, from environment provisioning to release</li>
+            <li>Defined Zynga's AI tools strategy: consolidated fragmented AI usage into a governed platform, trained PMs on AI-augmented workflows, and built the adoption and ROI measurement model reported at the board level</li>
+            <li>Results: deployment lead time down <strong>90%</strong>, build cycle time down <strong>25%</strong>, infrastructure costs down <strong>more than 80%</strong></li>
+          </ul>
+          <h4>Chapter 2 — Tools: the turnaround mandate</h4>
+          <p>The Tools portfolio spans three product pods: customer support tooling, player engagement and cross-game messaging, and game operations — including the localization platform serving Zynga's entire portfolio of live games.</p>
+          <ul>
+            <li>Shipped the localization platform's GA on schedule within <strong>ten weeks</strong> of taking over — after a two-year development history — by resetting scope, timeline discipline, and stakeholder trust</li>
+            <li>Instituted decision hygiene the teams lacked: documented build-vs-buy frameworks, requirements sign-off before engineering evaluation, one-pagers with business rationale at kickoff</li>
+            <li>Reset roadmaps and priorities across all three pods, replacing analysis paralysis with clear decision deadlines</li>
+            <li>Built AI-driven machine translation into the localization pipeline, materially reducing translation costs across the portfolio</li>
+            <li>Own the messaging platform handling <strong>96% of all player engagement messages</strong> across the Zynga portfolio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="case">
+      <button class="case-toggle" aria-expanded="false" aria-controls="case-2">
+        <span class="case-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 36 L8 28"/>
+            <path d="M18 36 L18 22"/>
+            <path d="M28 36 L28 15"/>
+            <path d="M38 36 L38 9"/>
+            <path stroke-opacity="0.4" d="M8 36 L38 36"/>
+            <path d="M8 27 L18 20 L28 13 L36 8"/>
+            <path d="M30 8 L36 8 L36 14"/>
+          </svg>
+        </span>
+        <div class="case-toggle-text">
+          <h3>Amazon: Making Twitch Prime a growth engine</h3>
+          <p class="card-summary">Grew Twitch Prime membership 300%, making it the #2 acquisition driver for Amazon Prime.</p>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="case-body" id="case-2">
+        <div class="case-body-inner">
+          <h4>Context</h4>
+          <p>Twitch Prime (now Prime Gaming) was a young benefit inside the Amazon Prime ecosystem. I owned member experience — every feature designed to acquire and retain members.</p>
+          <h4>What I did</h4>
+          <ul>
+            <li>Built the member experience roadmap from data-driven insight loops: instrument, learn, ship, repeat</li>
+            <li>Launched <strong>Free Games with Prime</strong>, the program that gave the benefit a recurring, tangible hook</li>
+            <li>Aligned product, marketing, and partnerships across two large organizations (Amazon and Twitch) with different cultures and metrics</li>
+          </ul>
+          <h4>Results</h4>
+          <ul>
+            <li><strong>300%</strong> membership growth; Twitch Prime became the <strong>#2 acquisition channel</strong> for the entire Prime program</li>
+            <li>Free Games with Prime drove <strong>+300 bps</strong> in member conversion and <strong>+250 bps</strong> in retention</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="case">
+      <button class="case-toggle" aria-expanded="false" aria-controls="case-3">
+        <span class="case-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="10" r="3.5"/>
+            <circle cx="10" cy="30" r="3.5"/>
+            <circle cx="38" cy="30" r="3.5"/>
+            <circle cx="24" cy="40" r="3.5"/>
+            <path d="M24 13.5 L11.5 27.5"/>
+            <path d="M24 13.5 L36.5 27.5"/>
+            <path d="M13 31 L21 38"/>
+            <path d="M35 31 L27 38"/>
+            <path stroke-opacity="0.4" d="M13.2 30 L34.8 30"/>
+          </svg>
+        </span>
+        <div class="case-toggle-text">
+          <h3>Unity: Multiplayer as a platform product</h3>
+          <p class="card-summary">Scaled Unity's multiplayer platform past 100 partner teams and cut studio integration time 30%.</p>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="case-body" id="case-3">
+        <div class="case-body-inner">
+          <h4>Context</h4>
+          <p>Multiplayer is one of the hardest things a game team builds. At Unity I owned product strategy and roadmap for Multiplayer Services — matchmaking, lobby, and relationship APIs — plus AI-driven LiveOps analytics.</p>
+          <h4>What I did</h4>
+          <ul>
+            <li>Delivered major upgrades to matchmaking, lobby, and relationship APIs with developer workflow as the first-class requirement: simpler setup, testing, and deployment</li>
+            <li>Ran targeted betas and developer engagement programs to grow platform adoption</li>
+            <li>Launched a Trust &amp; Safety initiative using AI/ML to combat toxicity in games and online communities</li>
+            <li>Drove the Sentis AI product through rapid iteration with <strong>2,000+ beta users</strong></li>
+          </ul>
+          <h4>Results</h4>
+          <ul>
+            <li>Platform adoption grew past <strong>100 partner teams</strong></li>
+            <li>Studio integration time down <strong>30%</strong></li>
+            <li>New LiveOps analytics shipped, giving teams real-time insight into player behavior and retention</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="case">
+      <button class="case-toggle" aria-expanded="false" aria-controls="case-4">
+        <span class="case-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="15"/>
+            <ellipse cx="24" cy="24" rx="15" ry="6"/>
+            <path d="M24 9 L24 39"/>
+            <path d="M9.5 18 L38.5 18"/>
+            <path d="M9.5 30 L38.5 30"/>
+          </svg>
+        </span>
+        <div class="case-toggle-text">
+          <h3>NCsoft: Publishing Guild Wars 2</h3>
+          <p class="card-summary">Built NCsoft West's publishing function and launched Guild Wars 2 — 3M units in six months, $50M in presales.</p>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="case-body" id="case-4">
+        <div class="case-body-inner">
+          <h4>Context</h4>
+          <p>NCsoft West was newly formed and had no publishing function. Guild Wars 2 — one of the most anticipated MMOs ever — needed release management, QA, customer support, ecommerce, and monetization built from scratch.</p>
+          <h4>What I did</h4>
+          <ul>
+            <li>Created the publishing organization: release management, quality assurance, and customer support for new MMORPG titles</li>
+            <li>Owned the ecommerce platform and first-party digital sales targets, including payment provider strategy</li>
+            <li>Developed the presale strategy and monetization model for launch, building on the playbook that generated $20M in presales for Aion</li>
+          </ul>
+          <h4>Results</h4>
+          <ul>
+            <li><strong>$50M</strong> in gross presales before launch</li>
+            <li><strong>3M+ units</strong> sold in the first six months; Best PC MMORPG of 2012</li>
+            <li>Publishing function became the operating model for NCsoft West titles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="timeline" class="wrap reveal">
+    <h2>25 years, one arc</h2>
+    <div class="timeline">
+      <div class="timeline-row">
+        <span class="timeline-years">2024–</span>
+        <span class="timeline-role"><span class="timeline-company">Zynga</span><br>Director of Product Management</span>
+        <span class="timeline-line">Rebuilt developer platforms; now leading a multi-pod Tools org turnaround</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-years">2024</span>
+        <span class="timeline-role"><span class="timeline-company">Sanlo</span><br>Head of Product, Gaming</span>
+        <span class="timeline-line">Series A fintech; webshop margins +30%</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-years">2021–24</span>
+        <span class="timeline-role"><span class="timeline-company">Unity</span><br>Senior Manager, Product Management</span>
+        <span class="timeline-line">Multiplayer Services; 100+ partner teams</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-years">2021</span>
+        <span class="timeline-role"><span class="timeline-company">Age of Learning</span><br>Director of Product Management</span>
+        <span class="timeline-line">Education gaming portfolio</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-years">2019–20</span>
+        <span class="timeline-role"><span class="timeline-company">Big Fish Games</span><br>Director of Product Management</span>
+        <span class="timeline-line">$30M+/month mobile game portfolio</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-years">2017–19</span>
+        <span class="timeline-role"><span class="timeline-company">Amazon</span><br>Senior PM, Twitch Prime</span>
+        <span class="timeline-line">300% growth; #2 Prime acquisition driver</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-years">2016</span>
+        <span class="timeline-role"><span class="timeline-company">Coros</span><br>Head of Product &amp; Business Operations</span>
+        <span class="timeline-line">Kickstarter at 640% of goal; Gear of the Show</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-years">2013–19</span>
+        <span class="timeline-role"><span class="timeline-company">Clubhouse Golf Center</span><br>Owner</span>
+        <span class="timeline-line">Built and sold WA's largest indoor golf business</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-years">2012–13</span>
+        <span class="timeline-role"><span class="timeline-company">Meteor Entertainment</span><br>Chief Publishing Officer</span>
+        <span class="timeline-line">Publishing org for Hawken F2P launch</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-years">2009–12</span>
+        <span class="timeline-role"><span class="timeline-company">NCsoft</span><br>Global Director of Publishing</span>
+        <span class="timeline-line">Guild Wars 2: 3M units, $50M presales</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-years">2001–09</span>
+        <span class="timeline-role"><span class="timeline-company">Microsoft</span><br>Senior Product Manager</span>
+        <span class="timeline-line">Xbox 360 launch ops; first B2C hardware business (Zune)</span>
+      </div>
+    </div>
+    <p class="timeline-footer">Before tech: US Army and Army Reserves (honorable discharge) · Snohomish Fire Department, Firefighter/EMT. B.A. Psychology &amp; Business Administration, Western Washington University. PMP certified.</p>
+  </section>
+
+  <section id="how-i-work" class="wrap reveal">
+    <h2>How I work</h2>
+    <div class="principles">
+      <div class="principle">
+        <h3>Outcomes over output.</h3>
+        <p>Every roadmap item traces to a business result. If we can't measure it, we haven't defined it yet.</p>
+      </div>
+      <div class="principle">
+        <h3>Platforms are products.</h3>
+        <p>Internal developer tools deserve the same discovery, design, and iteration rigor as anything customer-facing. Developer experience is the multiplier on everything a studio ships.</p>
+      </div>
+      <div class="principle">
+        <h3>AI is a workflow, not a feature.</h3>
+        <p>I've built AI product strategy from both sides — shipping AI-powered products and transforming how teams work with AI. The teams that win treat it as an operating model change.</p>
+      </div>
+      <div class="principle">
+        <h3>Narrative first.</h3>
+        <p>Strategy that can't be told as a story won't survive contact with an exec team. I write the press release before the roadmap.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="wrap reveal">
+    <h2>Get in touch</h2>
+    <p>Open to conversations with leaders and teams shaping the future of game development and technology.</p>
+    <div class="contact-links">
+      <a href="mailto:slevy53@live.com">Email: slevy53@live.com</a>
+      <a href="https://linkedin.com/in/stephenlevy" target="_blank" rel="noopener">LinkedIn: linkedin.com/in/stephenlevy</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 Stephen Levy</footer>
+
+<script>
+(function(){
+  // Accordion: only one case study open at a time
+  var toggles = document.querySelectorAll('.case-toggle');
+  function setBodyHeight(body, open){
+    if(open){
+      body.style.maxHeight = body.scrollHeight + 'px';
+    } else {
+      body.style.maxHeight = '0px';
+    }
+  }
+  toggles.forEach(function(btn, idx){
+    var body = document.getElementById(btn.getAttribute('aria-controls'));
+    var open = idx === 0; // first case study open by default
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    setBodyHeight(body, open);
+    btn.addEventListener('click', function(){
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      toggles.forEach(function(other){
+        if(other !== btn){
+          other.setAttribute('aria-expanded', 'false');
+          setBodyHeight(document.getElementById(other.getAttribute('aria-controls')), false);
+        }
+      });
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      setBodyHeight(body, !isOpen);
+    });
+  });
+  window.addEventListener('resize', function(){
+    toggles.forEach(function(btn){
+      var body = document.getElementById(btn.getAttribute('aria-controls'));
+      if(btn.getAttribute('aria-expanded') === 'true'){
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // IntersectionObserver entrance animation
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduceMotion && 'IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.15});
+    document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in-view'); });
+  }
+})();
+</script>
+
+</body>
+</html>
