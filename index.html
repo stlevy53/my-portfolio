@@ -219,6 +219,25 @@
     .work-card p{ font-size:14.5px; }
   }
 
+  /* ---------- ai projects ---------- */
+  .section-lede{ color:var(--text-dim); max-width:60ch; margin:0 0 24px; font-size:15px; line-height:1.55; }
+  .project-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
+  .project-card{ background:var(--surface); border:1px solid var(--border-strong); border-radius:14px; padding:20px; display:flex; flex-direction:column; gap:12px; }
+  .project-head{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+  .project-title{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:17px; color:var(--text); margin:0; }
+  .project-repo{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-faint); white-space:nowrap; }
+  .project-desc{ color:var(--text-body); font-size:14px; margin:0; }
+  .project-stack{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text-muted); }
+  .project-why{ font-size:13.5px; color:var(--text-dim); border-left:2px solid var(--accent); padding-left:12px; margin:0; }
+  .project-links{ display:flex; gap:10px; flex-wrap:wrap; margin-top:2px; }
+  .project-links a{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--accent); text-decoration:none; border:1px solid var(--border); border-radius:7px; padding:8px 12px; }
+  .project-links a:hover{ border-color:var(--accent); background:rgba(245,184,65,.06); }
+  @media (min-width:768px){
+    .project-grid{ grid-template-columns:1fr 1fr; }
+    .project-card{ padding:24px; }
+    .project-title{ font-size:18px; }
+  }
+
   /* ---------- contact ---------- */
   .contact{ padding:40px var(--pad-x); border-top:1px solid var(--border); background:linear-gradient(180deg,var(--bg),#151310); }
   .contact-title{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(1.6rem,6vw,2.125rem); letter-spacing:-.02em; margin:0 0 12px; }
@@ -251,6 +270,7 @@
       <nav class="nav-links">
         <a href="#about">about</a>
         <a href="#work">work</a>
+        <a href="#projects">projects</a>
         <a href="#timeline">timeline</a>
         <a href="#contact" class="contact-link">contact</a>
       </nav>
@@ -447,6 +467,71 @@
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ai projects -->
+    <section id="projects" class="section" data-reveal="">
+      <h2 class="section-title">AI-built projects</h2>
+      <p class="section-lede">Outside of leading AI platform strategy, I build with it directly — these are personal projects, shipped and running.</p>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3 class="project-title">Markdown Studio</h3>
+            <span class="project-repo">doc-to-markdown</span>
+          </div>
+          <p class="project-desc">Converts Google Docs, Word, PDFs, and Confluence exports into clean Markdown — built for PM workflows and packaged as an AI-readable "skill" agents can call directly.</p>
+          <div class="project-stack">Python CLI · browser UI (Pyodide) · zero-server processing · 3 dependencies</div>
+          <p class="project-why">Built AI-native tooling, not just AI-assisted tooling — content structured for machine consumption from the start.</p>
+          <div class="project-links">
+            <a href="https://github.com/stlevy53/doc-to-markdown" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://stlevy53.github.io/doc-to-markdown/" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3 class="project-title">Fire Department Job Radar</h3>
+            <span class="project-repo">fd.job.radar</span>
+          </div>
+          <p class="project-desc">Answers one question on a schedule with no human in the loop: which Washington fire departments are hiring right now, and when do they close. Scrapes multiple hiring platforms, dedupes, and pushes alerts before postings expire.</p>
+          <div class="project-stack">Python · Flask dashboard · GitHub Actions automation · email/Slack alerts</div>
+          <p class="project-why">Full pipeline — ingestion to alerting — shipped solo to solve a real problem; same instinct behind the platform work I lead professionally.</p>
+          <div class="project-links">
+            <a href="https://github.com/stlevy53/fd.job.radar" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://stlevy53.github.io/fd.job.radar/" target="_blank" rel="noopener">Live dashboard ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3 class="project-title">Relationship Tracker</h3>
+            <span class="project-repo">Personal-CRM</span>
+          </div>
+          <p class="project-desc">A relationship-tracking system for the people, conversations, and commitments that live outside a day job — built as a real three-tier application, not a spreadsheet with extra steps.</p>
+          <div class="project-stack">React/TypeScript · Go · PostgreSQL · Docker Compose · OIDC auth</div>
+          <p class="project-why">Typed API boundary, thin handlers, embedded migrations — the same architectural discipline I expect from teams I run.</p>
+          <div class="project-links">
+            <a href="https://github.com/stlevy53/Personal-CRM" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://stlevy53.github.io/Personal-CRM/" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3 class="project-title">Defy</h3>
+            <span class="project-repo">solitaire card game</span>
+          </div>
+          <p class="project-desc">A single-player digital port of <em>Resist!</em> (Salt &amp; Pepper Games), with a rules engine verified against the physical rulebook and a fuzzer that runs thousands of seeded games a minute to catch regressions.</p>
+          <div class="project-stack">React/TypeScript · Electron · headless rules engine · automated fuzz-testing</div>
+          <p class="project-why">Built largely with AI pair-programming — proof I can direct AI as a hands-on builder, not just sponsor it from a roadmap.</p>
+          <div class="project-links">
+            <a href="https://github.com/stlevy53/defy" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://github.com/stlevy53/defy/releases/tag/v0.1.7" target="_blank" rel="noopener">Playtest build ↗</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
